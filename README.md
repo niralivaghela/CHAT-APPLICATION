@@ -97,11 +97,11 @@ All chat history is stored temporarily in memory (can be upgraded to a database)
 
 📸 Preview
 
+<img width="507" height="292" alt="Image" src="https://github.com/user-attachments/assets/6afc8d0b-dc16-48e1-9197-20134e9ce1ec" />
 <img width="651" height="525" alt="Image" src="https://github.com/user-attachments/assets/e2762ec8-eb6a-40ba-b92c-dbeb75144c94" />
 <img width="1910" height="966" alt="Image" src="https://github.com/user-attachments/assets/41ca51c8-89b2-41aa-a9b4-def1edac10dd" />
 <img width="1919" height="907" alt="Image" src="https://github.com/user-attachments/assets/9a5f2874-6ffd-4f27-aa75-c062453b3bd4" />
 <img width="1919" height="913" alt="Image" src="https://github.com/user-attachments/assets/dd848814-d3c8-4ba4-b5b4-0e0488c598ee" />
-<img width="499" height="189" alt="Image" src="https://github.com/user-attachments/assets/5fd19a26-e834-4cfc-93c8-4c25f29413e3" />
 <img width="1890" height="922" alt="Image" src="https://github.com/user-attachments/assets/0b7baaf8-db81-4bc8-879a-5f5742e40c51" />
 <img width="1913" height="923" alt="Image" src="https://github.com/user-attachments/assets/0a09acec-8af1-4318-8fdf-035926387945" />
-<img width="507" height="292" alt="Image" src="https://github.com/user-attachments/assets/6afc8d0b-dc16-48e1-9197-20134e9ce1ec" />
+<img width="499" height="189" alt="Image" src="https://github.com/user-attachments/assets/5fd19a26-e834-4cfc-93c8-4c25f29413e3" />

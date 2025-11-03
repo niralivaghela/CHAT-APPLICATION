@@ -12,6 +12,7 @@
 
 *MENTOR* : NEELA SANTOSH
 
+
 💬 Pro Chat App
 A Modern Real-Time Chat Application using Socket.IO, Express.js, and Vanilla JS
 
@@ -28,6 +29,8 @@ The app is designed with a clean and modern UI for an engaging chatting experien
 ✅ Responsive UI — Works smoothly on desktop and mobile
 ✅ Frontend + Backend Integration — Complete communication between client and server using WebSocket
 ✅ Modular Code Structure — Clean separation of controllers, models, and configuration files
+
+
 
 🏗️ Project Structure
 
@@ -53,22 +56,31 @@ pro-chat-app/
 ├── .env                        # Environment variables (e.g., PORT)
 └── README.md
 
+
+
 ⚙️ Installation & Setup
 
 1️⃣ Clone the repository
+
 git clone https://github.com/<your-username>/pro-chat-app.git
 
 2️⃣ Navigate to the server folder
+
 cd pro-chat-app/server
 
 3️⃣ Install dependencies
+
 npm install
 
 4️⃣ Run the server
+
 node server.js
 
 5️⃣ Open the app in your browser
+
 http://localhost:3000
+
+
 
 🖥️ Tech Stack
 
@@ -79,6 +91,8 @@ Realtime Communication	Socket.IO
 Environment	dotenv
 Styling	Custom CSS
 
+
+
 💡 How It Works
 
 When a user opens the app, they enter their name.
@@ -87,6 +101,8 @@ Each message is sent to the server via Socket.IO, which instantly transmits it t
 The typing indicator and online/offline status update dynamically using WebSocket events.
 All chat history is stored temporarily in memory (can be upgraded to a database).
 
+
+
 🧠 Future Enhancements
 
 🗄️ MongoDB Integration for persistent chat storage
@@ -94,6 +110,8 @@ All chat history is stored temporarily in memory (can be upgraded to a database)
 💬 Private Rooms / Group Chats
 📷 Media Sharing (Images, Files)
 🌐 Multilingual Interface (English, Gujarati, etc.)
+
+
 
 📸 Preview
 

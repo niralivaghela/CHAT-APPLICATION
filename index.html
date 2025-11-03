@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProChat - Professional Messaging</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <span>ProChat</span>
+                </div>
+                <div class="user-profile" id="userProfile">
+                    <div class="avatar" id="userAvatar">👤</div>
+                    <div class="user-info">
+                        <div class="username" id="currentUser">Guest</div>
+                        <div class="status-text" id="statusText">Online</div>
+                    </div>
+                    <button class="profile-settings" id="profileBtn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="sidebar-nav">
+                <button class="nav-item active" data-tab="chat">
+                    <i class="fas fa-comments"></i>
+                    <span>Chat</span>
+                </button>
+                <button class="nav-item" data-tab="threads">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Threads</span>
+                </button>
+                <button class="nav-item" data-tab="files">
+                    <i class="fas fa-folder"></i>
+                    <span>Files</span>
+                </button>
+            </div>
+            
+            <div class="online-users">
+                <div class="section-header">
+                    <h3><i class="fas fa-users"></i> Online Users</h3>
+                    <span class="user-count-badge" id="userCount">0</span>
+                </div>
+                <div id="usersList"></div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="sound-toggle" id="soundToggle" title="Toggle sounds">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-main">
+            <div class="chat-header">
+                <div class="chat-info">
+                    <div class="channel-info">
+                        <h2><i class="fas fa-hashtag"></i> General</h2>
+                        <div class="channel-description">Main discussion channel</div>
+                    </div>
+                    <div class="activity-indicator">
+                        <div class="typing-users" id="typingUsers"></div>
+                        <span class="member-count">Online: <span id="onlineCount">0</span></span>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button class="action-btn" id="searchBtn" title="Search messages">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="action-btn" id="clearBtn" title="Clear chat">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                    <button class="action-btn" id="settingsBtn" title="Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="messages-container">
+                <div class="messages" id="messages"></div>
+                <div class="typing-indicator" id="typingIndicator"></div>
+            </div>
+            
+            <div class="message-input-container">
+                <div class="input-wrapper">
+                    <input type="file" id="fileInput" accept="image/*,.pdf,.doc,.docx,.txt" style="display: none;">
+                    <button class="attachment-btn" id="attachBtn" title="Attach file">
+                        <i class="fas fa-paperclip"></i>
+                    </button>
+                    <div class="text-input-container">
+                        <textarea id="messageInput" placeholder="Type a message..." disabled rows="1"></textarea>
+                        <div class="input-actions">
+                            <button class="emoji-btn" id="emojiBtn" title="Add emoji">
+                                <i class="fas fa-smile"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button id="sendBtn" disabled title="Send message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Username Modal -->
+    <div class="modal-overlay" id="usernameModal">
+        <div class="modal">
+            <div class="modal-header">
+                <i class="fas fa-user-plus"></i>
+                <h2>Join ProChat</h2>
+            </div>
+            <div class="modal-body">
+                <p>Enter your display name to start chatting</p>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="usernameInput" placeholder="Your display name" maxlength="20">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="joinBtn" class="primary-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Join Chat
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emoji Picker -->
+    <div class="emoji-picker" id="emojiPicker" style="display: none;">
+        <div class="emoji-content">
+            <div class="emoji-grid" id="emojiGrid">
+                <!-- Emojis will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio elements for sounds -->
+    <audio id="messageSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+    </audio>
+    <audio id="joinSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+    </audio>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

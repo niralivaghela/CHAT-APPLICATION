@@ -1,0 +1,11 @@
+{
+  "name": "pro-chat-app",
+  "version": "1.0.0",
+  "description": "Professional real-time chat app using Socket.IO",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "dependencies": {}
+}
+
